@@ -15,10 +15,10 @@ class Category(models.Model):
 
 class Product(models.Model):
     product_title = models.CharField(max_length=150, verbose_name="Продукт")
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, verbose_name="Описание")
     image = models.ImageField(upload_to='images/')
-    category_name = models.ForeignKey(Category, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    category_name = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категория")
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
     create_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
