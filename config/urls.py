@@ -3,6 +3,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('catalog.urls')),  # Подключаем URL приложения catalog
+    path('', include('catalog.urls')),
+    path('', include('blog.urls'))# Подключаем URL приложения catalog
 ]
 
