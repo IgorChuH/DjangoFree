@@ -24,7 +24,8 @@ class Reviews(models.Model):
     )
     views_count = models.PositiveIntegerField(
         default=0,
-        verbose_name='Количество просмотров'
+        verbose_name='Количество просмотров',
+        editable=False
     )
 
     def __str__(self):
