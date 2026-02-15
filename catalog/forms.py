@@ -26,13 +26,13 @@ class ProductForm(forms.ModelForm):
         # Настройка атрибутов виджета для поля 'first_name'
         self.fields['product_title'].widget.attrs.update({
             'class': 'form-control',  # Добавление CSS-класса для стилизации поля
-            'placeholder': 'Введите имя'  # Текст подсказки внутри поля
+            'placeholder': 'Введите название'  # Текст подсказки внутри поля
         })
 
         # Настройка атрибутов виджета для поля 'last_name'
         self.fields['description'].widget.attrs.update({
             'class': 'form-control',  # Добавление CSS-класса для стилизации поля
-            'placeholder': 'Введите фамилию'  # Текст подсказки внутри поля
+            'placeholder': 'Описание'  # Текст подсказки внутри поля
         })
 
         # Настройка атрибутов виджета для поля 'email'
