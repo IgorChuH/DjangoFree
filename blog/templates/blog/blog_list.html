@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Блог</title>
+</head>
+<body>
+    <h1>Записи блога</h1>
+    <a href="{% url 'blog:create' %}">Создать новую запись</a>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'blog:detail' post.pk %}" class="btn btn-secondary">{{ post.title }}</a>
+                (просмотров: {{ post.views_count }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

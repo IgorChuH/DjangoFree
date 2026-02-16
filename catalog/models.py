@@ -1,3 +1,35 @@
 from django.db import models
+from django.conf import settings
 
-# Create your models here.
+class Category(models.Model):
+    category_name = models.CharField(max_length=150, verbose_name="Категория")
+    description = models.TextField(null=True, verbose_name="Описание")
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
+
+
+class Product(models.Model):
+    product_title = models.CharField(max_length=150, verbose_name="Продукт")
+    description = models.TextField(null=True, verbose_name="Описание")
+    image = models.ImageField(upload_to='images/')
+    category_name = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категория")
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
+    create_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
+    is_published = models.BooleanField(default=False, verbose_name='Опубликовано')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Владелец')
+
+    def __str__(self):
+        return self.product_title
+
+    class Meta:
+        verbose_name = 'продукт'
+        verbose_name_plural = 'продукты'
+        permissions = [
+            ('can_unpublish_product', 'Может отменять публикацию продукта'),
+        ]

@@ -1,0 +1,44 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "category_name": "Телефоны",
+        "description": "Мобильники, смартфоны и сотовые"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "category_name": "Ноутбуки",
+        "description": "Все модели из новой поставки"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "product_title": "HUAWEI Mate X7",
+        "description": "Выгодный комплект при покупке Mate X7. Складной смартфон с культовым дизайном",
+        "image": "",
+        "category_name": 1,
+        "price": 22000.0,
+        "create_at": "2026-02-08",
+        "updated_at": "2026-02-08"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "product_title": "Игровой ноутбук",
+        "description": "Msi Thin 15 B13UC-1000US 15.6\"",
+        "image": "",
+        "category_name": 2,
+        "price": 30000.0,
+        "create_at": "2026-02-09",
+        "updated_at": "2026-02-09"
+    }
+}
+]
