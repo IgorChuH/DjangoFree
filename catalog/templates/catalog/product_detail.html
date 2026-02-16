@@ -12,6 +12,7 @@
                 {% endif %}
             </div>
             <div class="col-md-6">
+                <p><strong>Статус публикации:</strong> {% if product.is_published %}Опубликовано{% else %}Приватный{% endif %}</p>
                 <p><strong>Категория:</strong> {{ product.category_name }}</p>
                 <p><strong>Цена:</strong> {{ product.price }} руб.</p>
                 <p><strong>Описание:</strong></p>
