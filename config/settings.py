@@ -148,3 +148,12 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'chukhutinigor@yandex.ru'
 EMAIL_HOST_PASSWORD = 'ykcdgcdkxiwatndq'
 DEFAULT_FROM_EMAIL = 'chukhutinigor@yandex.ru'
+
+CACHE_ENABLED = True
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+    }
+}
